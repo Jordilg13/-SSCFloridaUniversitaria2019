@@ -1,0 +1,28 @@
+Enunciado:
+
+En este reto tendrás que implementar el juego de cartas “A pescar” con una baraja española de 8s y 9s y sin comodines, siguiendo las siguientes reglas y objetivos.
+
+Reglas:
+
+    Las cartas se tienen que barajar.
+    Juega la máquina contra el usuario.
+    Al inicio de la partida, se repartirán 7 cartas a cada uno.
+    Las cartas sobrantes, se distribuyen en una pila que será compartida por ambos.
+    Se juega por turnos, empezando por el usuario.
+    En cada turno, un jugador solicitará una carta al otro (por ejemplo, un 4).
+        Si el jugador que recibe la petición, tiene una o más cartas de las solicitadas (en este caso, un 4 o varios), se las tiene que dar al otro jugador. En este caso, el jugador solicitante, continuará pidiendo.
+        Si el jugador que recibe la petición, no tiene ninguna carta como la que le piden, entonces tiene que mostrar el mensaje “A pescar!”.  En este caso, el jugador solicitante, robará una carta de la baraja y pasará el turno al oponente.
+    Cuando un jugador consigue reunir las 4 cartas del mismo valor (los cuatro doses, los cuatro treses…), las retira del juego.
+
+Objetivo
+
+    La partida termina cuando ya se han retirado las 4 cartas de todos los valores.
+    Gana la partida el jugador que más grupos de 4 cartas haya hecho.
+
+Algunas aclaraciones:
+
+    Al inicio del script, deberá haber una pantalla para que el usuario pueda elegir entre comenzar una partida o salir.
+    Cuando empieza una partida, el usuario interaccionará con el juego sólo para elegir la carta que pide a la máquina en cada turno que le toque.
+    Cuando termina la partida, se muestra los grupos que ha obtenido cada participante y quién ha ganado, y se vuelve a la pantalla inicial.
+    Se valorarán aspectos añadidos, como control de errores.
+

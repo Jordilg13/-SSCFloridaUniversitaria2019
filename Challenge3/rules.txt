@@ -1,0 +1,61 @@
+Enunciado:
+
+Bienvenidos seáis todos a la grieta del invocador. En esta ocasión no intentaremos destruir el nexo del equipo rival, sino que emplearemos programación en Shell Script para recoger inteligencia que nos ayudará en nuestras próximas batallas en la grieta del invocador. En este desafío, vamos calcular cuáles son las 10 parejas de personajes más frecuentemente empleadas en partidas de ranking ganadas en las últimas temporadas de League of Legends.
+
+Ficheros de trabajo:
+
+Para poder realizar este pequeño programa, vamos a trabajar con varios ficheros.
+
+El fichero champions.csv contiene una pequeña base de datos de campeones de League of Legends. Más concretamente, cada línea contiene registros de campeones de League of Legends con el identificador numérico del campeón y su nombre. Por ejemplo, las primeras líneas de este fichero son:
+
+1,Annie
+2,Olaf
+3,Galio
+4,Twisted Fate
+5,Xin Zhao
+
+El fichero games.csv contiene estadísticas de más de 50.000 partidas de ranking de League of Legends en los últimos años. En cada partida, se enfrentan dos equipos (1 contra 2) formados por 5 componentes cada uno. En este fichero, la información también está organizada en filas y columnas. Cada fila contiene el registro de una partida de ranking de League of Legends, mientras que cada columna contiene uno de los campos de del registro que representa a la partida de League of Legends. Más concretamente, contamos con las siguientes columnas:
+
+    gameId: El identificador de la partida de ranking
+    creationTime: Marca de tiempo de creación de la partida
+    gameDuration: Duración en segundos de la partida
+    seasonId: Identificador de la temporada de juego
+    winner: Equipo ganador de la partida (1 si ha ganado el primer equipo, 2 si ha ganado el segundo)
+    firstBlood/Tower/Inhibitor/Baron/Dragon/RiftHerald : Equipo que realizó la primera sangre, torre, inhibido, barón, dragón, o heraldo (0: ninguno, 1: primer equipo, 2: segundo equipo)
+    t1_champXid: Identificadores de los 5 componentes del primer equipo.
+    t2_champXid: Identificadores de los 5 componentes del segundo equipo.
+    t1_champX_sumY: Identificador del Y-ésimo hechizo seleccionado por el X-ésimo componente del primer equipo.
+    t2_champX_sumY: Identificador del Y-ésimo hechizo seleccionado por el X-ésimo componente del segundo equipo.
+    t1_ELEMKills: Número de elementos destruidos por el primer equipo durante la partida, donde ELEMpuede ser tower, inhibitor, baron, dragon, riftHerald.
+    t2_ELEMKills: Número de elementos destruidos por el segundo equipo durante la partida, donde ELEMpuede ser tower, inhibitor, baron, dragon, riftHerald.
+    t1_banX: El identificador del X-ésimo personaje prohibido por el equipo 1 para la partida.
+    t2_banX: El identificador del X-ésimo personaje prohibido por el equipo 2 para la partida.
+
+En total, cada registro tiene 61 columnas o campos, aunque evidentemente no todos serán útiles para computar la solución buscada. Parte de tu trabajo será identificar qué columnas resultan interesantes para el cálculo de la solución final.
+
+Deberás escribir un Shell Script que genere un archivo llamado result.csv con el siguiente formato de ejemplo:
+
+Ahri,Ashe,1502
+Camille,Ezreal,892
+Ekko,Dr. Mundo,777
+Fizz,Caitlyn,650
+Gnar,Ezreal,578
+Fiora,Irelia,452
+Janna,Graves,321
+Jax,Jinx,245
+Ashe,Corki,151
+Katarina,Lee Sin,102
+
+Se trata de un fichero de 10 filas con las 10 parejas que han coincidido más veces en equipos ganadores. En cada fila tenemos el nombre de una pareja y el número de veces que dicha pareja ha coincidido en equipos ganadores. A modo de ejemplo, la primera línea significa que Ahri y Ashe han coincidido en 1502 equipos ganadores. Es decir, en 1502 batallas, Ahri y Ashe formaban parte de los equipos que ganaron.
+
+Como puede apreciarse, cada uno de los campos de información está separado por comas (sin separación de espacios entre ellos). Además, el fichero lista las parejas en orden descendente de uso en partidas ganadas. Por tanto, el resto de parejas que pueda haber, habrán coincidido en menos de 102 equipos ganadores. El ejemplo proporcionado es simplemente un ejemplo y por tanto no es la solución final específica del script.
+
+Evaluación del script:
+
+Para evaluar el script realizado se tendrán en cuenta los siguientes aspectos:
+
+    El fichero generado como resultado debe llamarse result.csv.
+    Que las 10 parejas identificadas en el fichero se correspondan con las 10 parejas que más hayan formado parte de equipos ganadores
+    Que el valor de cada pareja sea el correcto
+    El tiempo empleado en computar la solución
+

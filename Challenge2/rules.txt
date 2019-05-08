@@ -1,0 +1,53 @@
+Enunciado:
+
+En este reto tendrás que implementar un Shell Script que permita gestionar los libros de la biblioteca del centro a través de 3 ficheros: libros.bd, usuarios.bd y prestamos.bd, los cuáles deben de tener el siguiente formato:
+
+    libros.bd:
+        id_libro,título,autor,genero,año,estantería,prestado
+    usuarios.bd:
+        id_usuario,nombre,apellido1,apellido2,curso,num_préstamos
+    prestamos.bd:
+        id_prestamo,id_libro,id_usuario
+
+El Shell Script deberá ofrecer las siguientes operaciones a través de un menú:
+
+    Gestión de libros:
+        Alta
+        Baja (a través del id)
+        Consulta (a través del id o nombre)
+    Gestión de usuarios:
+        Alta
+        Baja (a través del id)
+        Consulta (a través del id o nombre)
+    Gestión de préstamos:
+        Alta
+        Baja (a través del id)
+        Listado
+        Consulta (a través del id de usuario o del id de libro)
+    Salir
+
+Algunas aclaraciones:
+
+    Los id de cada fichero serán autoincrementados y no se repetirán.
+    Puedes separar los campos como quieras, pero en un mismo campo, puede haber espacios en blanco, por lo que no puedes utilizar el espacio en blanco como separador de campos.
+    Las consultas se podrán hacer a través de los campos arriba indicados. Por ejemplo, para libros, se ofrecerán dos opciones: buscar por id buscar por nombre.
+    El listado de préstamos devolverá todos los préstamos realizados.
+    Los libros prestados, no se podrán volver a prestar.
+    Un mismo usuario, sólo podrá tener 3 pedidos al mismo tiempo.
+    No se podrán dar de baja usuarios o libros con préstamos pendientes.
+    Cuando se borra un libro, un usuario o un préstamo, sus ids (que quedan libres) no hace falta que se vuelvan a reutilizar en un futuro.
+
+Se valorará positivamente:
+
+    Que en el alta de préstamos, se muestren facilidades para elegir un libro y un usuario. Por ejemplo:
+
+Libros:
+
+        La isla del tesoro (id: 001)
+        El Hobbit (id: 002)
+        El Justicia (id: 003)
+
+Elige un libro: _
+
+    Cualquier otro tipo de aspecto positivo que se incluya adicionalmente.
+
